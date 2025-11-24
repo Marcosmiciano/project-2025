@@ -1,21 +1,18 @@
 // pages/index.js
 
-import React, { useState } from 'react';  // Importando o hook useState para interatividade
-import './style.css';  // Importa o arquivo CSS para estilizar a página
+import React, { useState } from 'react';
 
 function Home() {
-  const [message, setMessage] = useState(''); // Usando useState para gerenciar a mensagem interativa
+  const [message, setMessage] = useState('');
 
-  // Função que é acionada quando o botão é clicado
   const handleButtonClick = () => {
     setMessage('Você clicou no botão! Bem-vindo ao ByteShield.');
   };
 
-  // Função que lida com o envio do formulário de contato
   const handleSubmit = (event) => {
-    event.preventDefault(); // Previne o envio padrão do formulário
-    const name = event.target.name.value; // Obtém o nome do formulário
-    const email = event.target.email.value; // Obtém o email do formulário
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
 
     if (name && email) {
       setMessage(`Obrigado pelo contato, ${name}!`);
@@ -26,7 +23,6 @@ function Home() {
 
   return (
     <div className="container">
-      {/* Cabeçalho */}
       <header>
         <nav>
           <ul>
@@ -37,7 +33,6 @@ function Home() {
         </nav>
       </header>
 
-      {/* Seção Principal */}
       <section id="home">
         <h1>Bem-vindo ao ByteShield!</h1>
         <p>Aproveite a navegação interativa.</p>
@@ -45,7 +40,6 @@ function Home() {
         <p>{message}</p>
       </section>
 
-      {/* Seção de Funcionalidades */}
       <section id="features">
         <h2>Funcionalidades</h2>
         <p>Confira algumas funcionalidades incríveis que oferecemos.</p>
@@ -56,7 +50,6 @@ function Home() {
         </ul>
       </section>
 
-      {/* Seção de Contato */}
       <section id="contact">
         <h2>Contato</h2>
         <form onSubmit={handleSubmit}>
